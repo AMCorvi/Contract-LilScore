@@ -1,0 +1,20 @@
+pragma solidity ^0.4.4;
+
+contract LilScore
+{
+
+  mapping( string => int ) PlayerScore;
+
+  function SetPlayerScore(string name, int score) public{
+    if (PlayerScore[name]>0){
+      throw;
+    }
+    PlayerScore[name] = score;
+  }
+
+  function GetScore(string name) returns (int){
+    return PlayerScore[name];
+  }
+
+
+}
